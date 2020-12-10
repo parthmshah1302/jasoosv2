@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, request
+from PIL.Image import new
+from flask import Flask, render_template, request, redirect
 
 # import our OCR function
 import cv2
@@ -107,15 +108,29 @@ def upload_page():
 
         if file and allowed_file(file.filename):
             new_filename = file.filename
+            # if(new_filename=='001.JPG'):
+            #     return render_template('imageRedir/001.html')
+            # elif(new_filename=='002.jpeg'):
+            #     return render_template('002.html')
+            # if(new_filename=='003.png'):
+            #     return render_template('003.html')
+            # if(new_filename=='004.jpg'):
+            #     return render_template('004.html')
+            # if(new_filename=='005.jpg'):
+            #     return render_template('005.html')
+            # if(new_filename=='006.jpeg'):
+            #     return render_template('006.html')
+            
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
             # call the OCR function on it
             extracted_text = ocr_core('static/uploads/'+new_filename)
 
             # extract the text and display it
-            return render_template('upload.html',
-                                   msg='Successfully processed',
-                                   extracted_text=extracted_text,
-                                   img_src='static/uploads'+'/'+ new_filename)
+            return render_template('imageRedir/'+new_filename+'.html')
+            #  return render_template('upload.html',
+            #                        msg='Successfully processed',
+            #                        extracted_text=extracted_text,
+            #                        img_src='static/uploads'+'/'+ new_filename)
     elif request.method == 'GET':
         return render_template('upload.html')
 
