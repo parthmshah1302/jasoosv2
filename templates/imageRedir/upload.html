@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Signals</title>
+    <link rel="stylesheet" href="/static/uploads/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="/static/uploads/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/uploads/css/styles.min.css">
+</head>
+
+<body>
+    <!-- Start: Header Blue -->
+    <div>
+        <!-- Start: Header -->
+        <div class="header-blue">
+            <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+                <div class="container-fluid"><a class="navbar-brand" href="#">Signals and System Project</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item"></li>
+                        </ul>
+                        <form class="form-inline mr-auto" target="_self">
+                            <div class="form-group"><label for="search-field"></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>
+                        </form><span class="navbar-text"> </span><a class="btn btn-light action-button" role="button" href="#">Check Code</a>
+                    </div>
+                </div>
+            </nav><!-- Start: Animated Type Heading --><div class="caption v-middle text-center">
+    <h1 class="cd-headline clip">
+        <span class="blc">Welcome to</span>
+        <span class="cd-words-wrapper">
+          <b class="is-visible">our Project.</b>
+          <b>Group 31</b>
+        </span>
+        <span class="blinking">|</span>
+    </h1>
+</div><!-- End: Animated Type Heading -->
+            <!-- Start: Drag and Drop Multiple File Form Input upload (Adv -->
+            <div class="m-5">
+                <!-- Start: Backdrop -->
+                <div id="backdrop" class="backdrop backdrop-transition backdrop-dark">
+                    <!-- Start: Div Centered - Horizontally and Vertically -->
+                    <div class="text-center w-100" style="position: absolute;top: 50%;">
+                        <div class="bg-light border rounded border-success shadow-lg m-auto" style="width: 150px;height: 150px;"><i class="fa fa-upload d-block p-4" style="font-size: 50px;"></i><span>Drop file to attach</span></div>
+                    </div><!-- End: Div Centered - Horizontally and Vertically -->
+                </div><!-- End: Backdrop -->
+                <div class="jumbotron pt-1">
+                    <div class="alert alert-success invisible mt-5" role="alert"><span id="notify"></span></div>
+                    <h1>File Drop<br></h1>
+                    <p><label for="form-files"><a class="btn btn-secondary btn-sm" role="button">Choose Files</a></label>&nbsp;or drag the files to anywhere on this page.<br></p>
+                    <p id="filecount"><br></p>
+                    <div id="list"></div>
+                    <form method="post"><input type="file" id="form-files" class="invisible" name="files" multiple=""><button class="btn btn-outline-primary btn-block" type="submit">Submit</button><button class="btn btn-danger mt-5" type="reset" onclick="clearFiles()">Reset</button></form>
+                </div>
+                <div class="text-center bg-light border rounded border-dark shadow-lg p-3"><img id="image_preview" width="100">
+                    <div><button class="btn btn-warning btn-sm m-3" onclick="previewClose()">Close</button></div>
+                </div>
+            </div><!-- End: Drag and Drop Multiple File Form Input upload (Adv -->
+            <!-- Start: Animated Typing With Blinking -->
+            <div class="text-nowrap d-flex justify-content-center align-items-center animated-text noSelect" style="background: rgba(255,255,255,0);border-style: none;margin-top: 16px;width: 50%;margin-right: auto;margin-left: auto;"></div><!-- End: Animated Typing With Blinking -->
+        </div><!-- End: Header -->
+    </div><!-- End: Header Blue -->
+    <!-- Start: 3D cube 1 -->
+    <section class="3d-cube" style="padding-top: 100px;">
+        <h1 class="text-center" style="font-family: roboto;padding-bottom: 80px;">HOVER ME</h1><!-- Start: container -->
+        <div class="container">
+            <!-- Start: row -->
+            <div class="row">
+                <!-- Start: column -->
+                <div class="col-md-12">
+                    <!-- Start: cube-wrapper -->
+                    <div class="scene">
+                        <div class="cube">
+                            <!-- Start: Back side of cube -->
+                            <div class="side back2"></div><!-- End: Back side of cube -->
+                            <!-- Start: Left side cube -->
+                            <div class="side left2"></div><!-- End: Left side cube -->
+                            <!-- Start: Right side cube -->
+                            <div class="side right2"></div><!-- End: Right side cube -->
+                            <!-- Start: Top of cube -->
+                            <div class="side top2"></div><!-- End: Top of cube -->
+                            <!-- Start: Bottom of cube -->
+                            <div class="side bottom2"></div><!-- End: Bottom of cube -->
+                            <!-- Start: Front of cube -->
+                            <div class="side front2"></div><!-- End: Front of cube -->
+                        </div>
+                    </div><!-- End: cube-wrapper -->
+                </div><!-- End: column -->
+            </div><!-- End: row -->
+        </div><!-- End: container -->
+    </section><!-- End: 3D cube 1 -->
+    <script src="/static/uploads/js/jquery.min.js"></script>
+    <script src="/static/uploads/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/uploads/js/script.min.js"></script>
+</body>
+
+</html>
