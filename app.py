@@ -81,6 +81,7 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.run(host='0.0.0.0')
 # function to check the file extension
 def allowed_file(filename):
     return '.' in filename and \
