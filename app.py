@@ -10,7 +10,9 @@ import pytesseract
 
 def ocr_core(filename):
     # Reads the image and resizes it
+    print(filename)
     img = cv2.imread(filename,cv2.IMREAD_COLOR)
+   # cv2.imshow('testing',img)
     img = cv2.resize(img, (600,400) )
 
     # Grayscales
@@ -72,13 +74,13 @@ def ocr_core(filename):
     # cv2.destroyAllWindows()
 
 # define a folder to store and later serve the images
-UPLOAD_FOLDER = '/static/uploads/'
-
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(APP_ROOT,'static/uploads')
 # allow files of a specific type
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 app = Flask(__name__)
-
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # function to check the file extension
 def allowed_file(filename):
     return '.' in filename and \
@@ -97,22 +99,24 @@ def upload_page():
         if 'file' not in request.files:
             return render_template('upload.html', msg='No file selected')
         file = request.files['file']
+        #upfile = request.files['files']
         # if no file is selected
         if file.filename == '':
             return render_template('upload.html', msg='No file selected')
 
         if file and allowed_file(file.filename):
-
+            new_filename = file.filename
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
             # call the OCR function on it
-            extracted_text = ocr_core(file)
+            extracted_text = ocr_core('static/uploads/'+new_filename)
 
             # extract the text and display it
             return render_template('upload.html',
                                    msg='Successfully processed',
                                    extracted_text=extracted_text,
-                                   img_src=UPLOAD_FOLDER + file.filename)
+                                   img_src='static/uploads'+'/'+ new_filename)
     elif request.method == 'GET':
         return render_template('upload.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug = True)

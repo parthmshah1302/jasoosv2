@@ -5,7 +5,7 @@ import numpy as np
 import pytesseract
 
 
-def ocr_core(filename):
+def ocr_core_og(filename):
     # Reads the image and resizes it
     img = cv2.imread(filename,cv2.IMREAD_COLOR)
     img = cv2.resize(img, (600,400) )
@@ -68,5 +68,6 @@ def ocr_core(filename):
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
-finalanswer=ocr_core('pytesseract-simple-python-optical-character-recognition-1.png')
-print(finalanswer)
+# finalanswer=ocr_core_og('007.jpg')
+# print(finalanswer)
+# print("hi")
